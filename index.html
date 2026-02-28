@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam & Jurgen - 25 April 2027 | Málaga, Spanje</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">S &amp; J</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#ons-verhaal">Ons Verhaal</a></li>
+                <li><a href="#details">Details</a></li>
+                <li><a href="#programma">Programma</a></li>
+                <li><a href="#locatie">Locatie</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Wij gaan trouwen!</p>
+            <h1 class="hero-title">Sam <span class="amp">&amp;</span> Jurgen</h1>
+            <div class="hero-date">25 april 2027</div>
+            <div class="hero-location">Málaga, Spanje</div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">---</span>
+                    <span class="countdown-label">dagen</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">--</span>
+                    <span class="countdown-label">uren</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">--</span>
+                    <span class="countdown-label">minuten</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">--</span>
+                    <span class="countdown-label">seconden</span>
+                </div>
+            </div>
+            <a href="#rsvp" class="hero-cta">Bevestig je aanwezigheid</a>
+        </div>
+    </header>
+
+    <!-- Ons Verhaal -->
+    <section id="ons-verhaal" class="section">
+        <div class="container">
+            <h2 class="section-title">Ons Verhaal</h2>
+            <div class="divider"></div>
+            <div class="story-grid">
+                <div class="story-card" data-animate>
+                    <div class="story-icon">&#10084;</div>
+                    <h3>Hoe het begon</h3>
+                    <p>Soms ontmoet je iemand en weet je meteen dat het klopt. Zo was het voor ons. Wat begon als een toevallige ontmoeting groeide uit tot de mooiste liefde.</p>
+                </div>
+                <div class="story-card" data-animate>
+                    <div class="story-icon">&#9734;</div>
+                    <h3>Het avontuur</h3>
+                    <p>Samen hebben we de wereld verkend, gelachen, gehuild en vooral heel veel mooie herinneringen gemaakt. Elk moment samen is een cadeau.</p>
+                </div>
+                <div class="story-card" data-animate>
+                    <div class="story-icon">&#128141;</div>
+                    <h3>De grote vraag</h3>
+                    <p>En toen kwam het moment waarop we wisten: dit is voor altijd. We willen niets liever dan onze liefde vieren, omringd door de mensen die ons het meest dierbaar zijn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details -->
+    <section id="details" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">De Details</h2>
+            <div class="divider"></div>
+            <div class="details-grid">
+                <div class="detail-card" data-animate>
+                    <div class="detail-icon">&#128197;</div>
+                    <h3>Datum</h3>
+                    <p>Zondag 25 april 2027</p>
+                </div>
+                <div class="detail-card" data-animate>
+                    <div class="detail-icon">&#128205;</div>
+                    <h3>Locatie</h3>
+                    <p>Málaga, Spanje</p>
+                    <p class="detail-sub">Exacte locatie volgt</p>
+                </div>
+                <div class="detail-card" data-animate>
+                    <div class="detail-icon">&#9200;</div>
+                    <h3>Tijdstip</h3>
+                    <p>Ceremonie om 15:00 uur</p>
+                    <p class="detail-sub">Aanwezig zijn vanaf 14:30</p>
+                </div>
+                <div class="detail-card" data-animate>
+                    <div class="detail-icon">&#128134;</div>
+                    <h3>Dresscode</h3>
+                    <p>Feestelijk chic</p>
+                    <p class="detail-sub">Denk aan lichte kleuren passend bij de Spaanse zon</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programma -->
+    <section id="programma" class="section">
+        <div class="container">
+            <h2 class="section-title">Programma</h2>
+            <div class="divider"></div>
+            <div class="timeline">
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-time">14:30</div>
+                    <div class="timeline-content">
+                        <h3>Ontvangst</h3>
+                        <p>Welkom met een verfrissend drankje</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-time">15:00</div>
+                    <div class="timeline-content">
+                        <h3>Ceremonie</h3>
+                        <p>Het mooiste moment van de dag</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-time">16:00</div>
+                    <div class="timeline-content">
+                        <h3>Receptie &amp; Borrel</h3>
+                        <p>Toosten op de liefde met tapas en drankjes</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-time">18:30</div>
+                    <div class="timeline-content">
+                        <h3>Diner</h3>
+                        <p>Een heerlijk Spaans diner onder de sterren</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animate>
+                    <div class="timeline-time">21:00</div>
+                    <div class="timeline-content">
+                        <h3>Feest!</h3>
+                        <p>Dansen tot de vroege uurtjes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locatie -->
+    <section id="locatie" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Locatie</h2>
+            <div class="divider"></div>
+            <div class="location-content" data-animate>
+                <div class="location-info">
+                    <h3>Málaga, Spanje</h3>
+                    <p>De prachtige kuststad aan de Costa del Sol vormt het perfecte decor voor onze grote dag. Met zijn warme klimaat, adembenemende uitzichten en heerlijke Spaanse gastvrijheid wordt het een onvergetelijk feest.</p>
+                    <div class="location-details">
+                        <div class="location-detail">
+                            <strong>&#9992; Vliegveld:</strong> Málaga-Costa del Sol (AGP)
+                        </div>
+                        <div class="location-detail">
+                            <strong>&#127777; Weer:</strong> Gemiddeld 22°C in april, volop zon
+                        </div>
+                        <div class="location-detail">
+                            <strong>&#128712; Tips:</strong> Maak er een lang weekend van! Meer info over verblijf volgt.
+                        </div>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102263.83800979498!2d-4.5499847!3d36.7213028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7259c56ec03d49%3A0x93f39e780a405e0!2sM%C3%A1laga%2C%20Spanje!5e0!3m2!1snl!2snl!4v1700000000000!5m2!1snl!2snl"
+                        width="100%"
+                        height="400"
+                        style="border:0; border-radius: 12px;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="section section-rsvp">
+        <div class="container">
+            <h2 class="section-title">RSVP</h2>
+            <div class="divider"></div>
+            <p class="rsvp-intro">Wij hopen jullie erbij te hebben op onze grote dag!<br>Laat ons vóór <strong>1 februari 2027</strong> weten of je erbij kunt zijn.</p>
+
+            <form id="rsvp-form" class="rsvp-form" data-animate>
+                <div class="form-group">
+                    <label for="naam">Volledige naam *</label>
+                    <input type="text" id="naam" name="naam" required placeholder="Je volledige naam">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mailadres *</label>
+                    <input type="email" id="email" name="email" required placeholder="je@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Aanwezigheid *</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="aanwezig" value="ja" required>
+                            <span class="radio-custom"></span>
+                            Ja, ik ben erbij!
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="aanwezig" value="nee">
+                            <span class="radio-custom"></span>
+                            Helaas kan ik er niet bij zijn
+                        </label>
+                    </div>
+                </div>
+
+                <div id="extra-fields" class="extra-fields hidden">
+                    <div class="form-group">
+                        <label for="aantal">Aantal personen (inclusief jezelf)</label>
+                        <select id="aantal" name="aantal">
+                            <option value="1">1 persoon</option>
+                            <option value="2" selected>2 personen</option>
+                            <option value="3">3 personen</option>
+                            <option value="4">4 personen</option>
+                            <option value="5">5 personen</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dieet">Dieetwensen of allergieën</label>
+                        <input type="text" id="dieet" name="dieet" placeholder="Vegetarisch, glutenvrij, noten-allergie, etc.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="muziek">Welk nummer moet zeker gedraaid worden?</label>
+                        <input type="text" id="muziek" name="muziek" placeholder="Artiest - Titel">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bericht">Bericht voor het bruidspaar</label>
+                    <textarea id="bericht" name="bericht" rows="4" placeholder="Laat een lief berichtje achter..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit" id="btn-submit">
+                    <span class="btn-text">Verstuur RSVP</span>
+                    <span class="btn-loading hidden">Versturen...</span>
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div id="rsvp-success" class="rsvp-success hidden">
+                <div class="success-icon">&#10003;</div>
+                <h3>Bedankt!</h3>
+                <p id="success-message">Je RSVP is ontvangen. We kijken ernaar uit!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-names">Sam &amp; Jurgen</p>
+            <p class="footer-date">25 april 2027 &middot; Málaga, Spanje</p>
+            <p class="footer-love">Met liefde gemaakt</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
