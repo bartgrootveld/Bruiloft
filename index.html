@@ -6,7 +6,7 @@
     <title>Sam & Jurgen - 25 April 2027 | Málaga, Spanje</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">S &amp; J</a>
+            <a href="#hero" class="nav-logo">S <span class="nav-amp">&amp;</span> J</a>
             <button class="nav-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -25,59 +25,101 @@
                 <li><a href="#details">Details</a></li>
                 <li><a href="#programma">Programma</a></li>
                 <li><a href="#locatie">Locatie</a></li>
-                <li><a href="#rsvp">RSVP</a></li>
+                <li><a href="#rsvp" class="nav-cta">RSVP</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header id="hero">
+        <div class="hero-bg-pattern"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-subtitle">Wij gaan trouwen!</p>
+            <div class="hero-ornament-top">
+                <svg width="120" height="30" viewBox="0 0 120 30" fill="none">
+                    <path d="M60 28C60 28 45 15 30 15C15 15 5 22 0 28" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+                    <path d="M60 28C60 28 75 15 90 15C105 15 115 22 120 28" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="60" cy="28" r="2" fill="currentColor" opacity="0.6"/>
+                </svg>
+            </div>
+            <p class="hero-subtitle">Wij gaan trouwen</p>
             <h1 class="hero-title">Sam <span class="amp">&amp;</span> Jurgen</h1>
-            <div class="hero-date">25 april 2027</div>
-            <div class="hero-location">Málaga, Spanje</div>
+            <div class="hero-meta">
+                <span class="hero-date">25 april 2027</span>
+                <span class="hero-dot"></span>
+                <span class="hero-location">Málaga, Spanje</span>
+            </div>
             <div class="countdown" id="countdown">
                 <div class="countdown-item">
                     <span class="countdown-number" id="days">---</span>
                     <span class="countdown-label">dagen</span>
                 </div>
+                <div class="countdown-sep">:</div>
                 <div class="countdown-item">
                     <span class="countdown-number" id="hours">--</span>
                     <span class="countdown-label">uren</span>
                 </div>
+                <div class="countdown-sep">:</div>
                 <div class="countdown-item">
                     <span class="countdown-number" id="minutes">--</span>
                     <span class="countdown-label">minuten</span>
                 </div>
+                <div class="countdown-sep">:</div>
                 <div class="countdown-item">
                     <span class="countdown-number" id="seconds">--</span>
                     <span class="countdown-label">seconden</span>
                 </div>
             </div>
-            <a href="#rsvp" class="hero-cta">Bevestig je aanwezigheid</a>
+            <a href="#rsvp" class="hero-cta">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Bevestig je aanwezigheid
+            </a>
+            <div class="hero-ornament-bottom">
+                <svg width="200" height="20" viewBox="0 0 200 20" fill="none">
+                    <line x1="0" y1="10" x2="80" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+                    <circle cx="90" cy="10" r="2" fill="currentColor" opacity="0.5"/>
+                    <circle cx="100" cy="10" r="3" fill="currentColor" opacity="0.6"/>
+                    <circle cx="110" cy="10" r="2" fill="currentColor" opacity="0.5"/>
+                    <line x1="120" y1="10" x2="200" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
         </div>
     </header>
 
     <!-- Ons Verhaal -->
     <section id="ons-verhaal" class="section">
         <div class="container">
-            <h2 class="section-title">Ons Verhaal</h2>
-            <div class="divider"></div>
+            <div class="section-header">
+                <span class="section-tag">Onze reis</span>
+                <h2 class="section-title">Ons Verhaal</h2>
+                <div class="divider">
+                    <span></span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    <span></span>
+                </div>
+            </div>
             <div class="story-grid">
                 <div class="story-card" data-animate>
-                    <div class="story-icon">&#10084;</div>
+                    <div class="story-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
                     <h3>Hoe het begon</h3>
                     <p>Soms ontmoet je iemand en weet je meteen dat het klopt. Zo was het voor ons. Wat begon als een toevallige ontmoeting groeide uit tot de mooiste liefde.</p>
                 </div>
                 <div class="story-card" data-animate>
-                    <div class="story-icon">&#9734;</div>
+                    <div class="story-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
                     <h3>Het avontuur</h3>
                     <p>Samen hebben we de wereld verkend, gelachen, gehuild en vooral heel veel mooie herinneringen gemaakt. Elk moment samen is een cadeau.</p>
                 </div>
                 <div class="story-card" data-animate>
-                    <div class="story-icon">&#128141;</div>
+                    <div class="story-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c6-3 10-9.5 10-14.5C22 4.5 19 2 16 2c-1.74 0-3.41.81-4.5 2.09C10.41 2.81 8.74 2 7 2 4 2 1 4.5 1 7.5 1 12.5 5 19 12 22z"/><path d="M12 12l2-4h4l-3 3 1 4-4-2.5L8 15l1-4-3-3h4z"/></svg>
+                    </div>
                     <h3>De grote vraag</h3>
                     <p>En toen kwam het moment waarop we wisten: dit is voor altijd. We willen niets liever dan onze liefde vieren, omringd door de mensen die ons het meest dierbaar zijn.</p>
                 </div>
@@ -88,28 +130,43 @@
     <!-- Details -->
     <section id="details" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">De Details</h2>
-            <div class="divider"></div>
+            <div class="section-header">
+                <span class="section-tag">Praktisch</span>
+                <h2 class="section-title">De Details</h2>
+                <div class="divider">
+                    <span></span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+                    <span></span>
+                </div>
+            </div>
             <div class="details-grid">
                 <div class="detail-card" data-animate>
-                    <div class="detail-icon">&#128197;</div>
+                    <div class="detail-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><rect x="8" y="14" width="3" height="3" rx="0.5"/></svg>
+                    </div>
                     <h3>Datum</h3>
                     <p>Zondag 25 april 2027</p>
                 </div>
                 <div class="detail-card" data-animate>
-                    <div class="detail-icon">&#128205;</div>
+                    <div class="detail-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
                     <h3>Locatie</h3>
                     <p>Málaga, Spanje</p>
                     <p class="detail-sub">Exacte locatie volgt</p>
                 </div>
                 <div class="detail-card" data-animate>
-                    <div class="detail-icon">&#9200;</div>
+                    <div class="detail-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
                     <h3>Tijdstip</h3>
                     <p>Ceremonie om 15:00 uur</p>
                     <p class="detail-sub">Aanwezig zijn vanaf 14:30</p>
                 </div>
                 <div class="detail-card" data-animate>
-                    <div class="detail-icon">&#128134;</div>
+                    <div class="detail-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.08z"/></svg>
+                    </div>
                     <h3>Dresscode</h3>
                     <p>Feestelijk chic</p>
                     <p class="detail-sub">Denk aan lichte kleuren passend bij de Spaanse zon</p>
@@ -121,11 +178,21 @@
     <!-- Programma -->
     <section id="programma" class="section">
         <div class="container">
-            <h2 class="section-title">Programma</h2>
-            <div class="divider"></div>
+            <div class="section-header">
+                <span class="section-tag">De dag</span>
+                <h2 class="section-title">Programma</h2>
+                <div class="divider">
+                    <span></span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><circle cx="12" cy="12" r="4"/></svg>
+                    <span></span>
+                </div>
+            </div>
             <div class="timeline">
                 <div class="timeline-item" data-animate>
                     <div class="timeline-time">14:30</div>
+                    <div class="timeline-marker">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <div class="timeline-content">
                         <h3>Ontvangst</h3>
                         <p>Welkom met een verfrissend drankje</p>
@@ -133,6 +200,9 @@
                 </div>
                 <div class="timeline-item" data-animate>
                     <div class="timeline-time">15:00</div>
+                    <div class="timeline-marker">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
                     <div class="timeline-content">
                         <h3>Ceremonie</h3>
                         <p>Het mooiste moment van de dag</p>
@@ -140,6 +210,9 @@
                 </div>
                 <div class="timeline-item" data-animate>
                     <div class="timeline-time">16:00</div>
+                    <div class="timeline-marker">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                    </div>
                     <div class="timeline-content">
                         <h3>Receptie &amp; Borrel</h3>
                         <p>Toosten op de liefde met tapas en drankjes</p>
@@ -147,6 +220,9 @@
                 </div>
                 <div class="timeline-item" data-animate>
                     <div class="timeline-time">18:30</div>
+                    <div class="timeline-marker">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/><line x1="12" y1="2" x2="12" y2="4"/></svg>
+                    </div>
                     <div class="timeline-content">
                         <h3>Diner</h3>
                         <p>Een heerlijk Spaans diner onder de sterren</p>
@@ -154,6 +230,9 @@
                 </div>
                 <div class="timeline-item" data-animate>
                     <div class="timeline-time">21:00</div>
+                    <div class="timeline-marker">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/><path d="M2 17h4"/><path d="M14 15h4"/></svg>
+                    </div>
                     <div class="timeline-content">
                         <h3>Feest!</h3>
                         <p>Dansen tot de vroege uurtjes</p>
@@ -166,21 +245,46 @@
     <!-- Locatie -->
     <section id="locatie" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Locatie</h2>
-            <div class="divider"></div>
+            <div class="section-header">
+                <span class="section-tag">Bestemming</span>
+                <h2 class="section-title">Locatie</h2>
+                <div class="divider">
+                    <span></span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="white"/></svg>
+                    <span></span>
+                </div>
+            </div>
             <div class="location-content" data-animate>
                 <div class="location-info">
                     <h3>Málaga, Spanje</h3>
                     <p>De prachtige kuststad aan de Costa del Sol vormt het perfecte decor voor onze grote dag. Met zijn warme klimaat, adembenemende uitzichten en heerlijke Spaanse gastvrijheid wordt het een onvergetelijk feest.</p>
                     <div class="location-details">
                         <div class="location-detail">
-                            <strong>&#9992; Vliegveld:</strong> Málaga-Costa del Sol (AGP)
+                            <div class="location-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                            </div>
+                            <div>
+                                <strong>Vliegveld</strong>
+                                <span>Málaga-Costa del Sol (AGP)</span>
+                            </div>
                         </div>
                         <div class="location-detail">
-                            <strong>&#127777; Weer:</strong> Gemiddeld 22°C in april, volop zon
+                            <div class="location-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                            </div>
+                            <div>
+                                <strong>Weer</strong>
+                                <span>Gemiddeld 22°C in april, volop zon</span>
+                            </div>
                         </div>
                         <div class="location-detail">
-                            <strong>&#128712; Tips:</strong> Maak er een lang weekend van! Meer info over verblijf volgt.
+                            <div class="location-detail-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                            </div>
+                            <div>
+                                <strong>Tips</strong>
+                                <span>Maak er een lang weekend van! Meer info over verblijf volgt.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -202,40 +306,65 @@
     <!-- RSVP -->
     <section id="rsvp" class="section section-rsvp">
         <div class="container">
-            <h2 class="section-title">RSVP</h2>
-            <div class="divider"></div>
-            <p class="rsvp-intro">Wij hopen jullie erbij te hebben op onze grote dag!<br>Laat ons vóór <strong>1 februari 2027</strong> weten of je erbij kunt zijn.</p>
+            <div class="section-header">
+                <span class="section-tag">Laat het ons weten</span>
+                <h2 class="section-title">RSVP</h2>
+                <div class="divider">
+                    <span></span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="white" stroke-width="2"/></svg>
+                    <span></span>
+                </div>
+            </div>
+            <p class="rsvp-intro">Wij hopen jullie erbij te hebben op onze grote dag!<br>Laat ons voor <strong>1 februari 2027</strong> weten of je erbij kunt zijn.</p>
 
             <form id="rsvp-form" class="rsvp-form" data-animate>
                 <div class="form-group">
-                    <label for="naam">Volledige naam *</label>
+                    <label for="naam">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        Volledige naam
+                    </label>
                     <input type="text" id="naam" name="naam" required placeholder="Je volledige naam">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">E-mailadres *</label>
+                    <label for="email">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        E-mailadres
+                    </label>
                     <input type="email" id="email" name="email" required placeholder="je@email.com">
                 </div>
 
                 <div class="form-group">
-                    <label>Aanwezigheid *</label>
+                    <label>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        Aanwezigheid
+                    </label>
                     <div class="radio-group">
                         <label class="radio-label">
                             <input type="radio" name="aanwezig" value="ja" required>
                             <span class="radio-custom"></span>
-                            Ja, ik ben erbij!
+                            <span class="radio-text">
+                                <strong>Ja, ik ben erbij!</strong>
+                                <small>We kijken ernaar uit</small>
+                            </span>
                         </label>
                         <label class="radio-label">
                             <input type="radio" name="aanwezig" value="nee">
                             <span class="radio-custom"></span>
-                            Helaas kan ik er niet bij zijn
+                            <span class="radio-text">
+                                <strong>Helaas kan ik er niet bij zijn</strong>
+                                <small>Jammer, maar bedankt voor het laten weten</small>
+                            </span>
                         </label>
                     </div>
                 </div>
 
                 <div id="extra-fields" class="extra-fields hidden">
                     <div class="form-group">
-                        <label for="aantal">Aantal personen (inclusief jezelf)</label>
+                        <label for="aantal">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Aantal personen
+                        </label>
                         <select id="aantal" name="aantal">
                             <option value="1">1 persoon</option>
                             <option value="2" selected>2 personen</option>
@@ -246,30 +375,47 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="dieet">Dieetwensen of allergieën</label>
+                        <label for="dieet">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                            Dieetwensen of allergieen
+                        </label>
                         <input type="text" id="dieet" name="dieet" placeholder="Vegetarisch, glutenvrij, noten-allergie, etc.">
                     </div>
 
                     <div class="form-group">
-                        <label for="muziek">Welk nummer moet zeker gedraaid worden?</label>
+                        <label for="muziek">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/></svg>
+                            Welk nummer moet zeker gedraaid worden?
+                        </label>
                         <input type="text" id="muziek" name="muziek" placeholder="Artiest - Titel">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="bericht">Bericht voor het bruidspaar</label>
+                    <label for="bericht">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Bericht voor het bruidspaar
+                    </label>
                     <textarea id="bericht" name="bericht" rows="4" placeholder="Laat een lief berichtje achter..."></textarea>
                 </div>
 
                 <button type="submit" class="btn-submit" id="btn-submit">
-                    <span class="btn-text">Verstuur RSVP</span>
-                    <span class="btn-loading hidden">Versturen...</span>
+                    <span class="btn-text">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        Verstuur RSVP
+                    </span>
+                    <span class="btn-loading hidden">
+                        <span class="spinner"></span>
+                        Versturen...
+                    </span>
                 </button>
             </form>
 
             <!-- Success Message -->
             <div id="rsvp-success" class="rsvp-success hidden">
-                <div class="success-icon">&#10003;</div>
+                <div class="success-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
                 <h3>Bedankt!</h3>
                 <p id="success-message">Je RSVP is ontvangen. We kijken ernaar uit!</p>
             </div>
@@ -279,8 +425,20 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-ornament">
+                <svg width="140" height="20" viewBox="0 0 140 20" fill="none">
+                    <line x1="0" y1="10" x2="55" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                    <circle cx="62" cy="10" r="2" fill="currentColor" opacity="0.4"/>
+                    <circle cx="70" cy="10" r="3" fill="currentColor" opacity="0.5"/>
+                    <circle cx="78" cy="10" r="2" fill="currentColor" opacity="0.4"/>
+                    <line x1="85" y1="10" x2="140" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+                </svg>
+            </div>
             <p class="footer-names">Sam &amp; Jurgen</p>
             <p class="footer-date">25 april 2027 &middot; Málaga, Spanje</p>
+            <div class="footer-hearts">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" opacity="0.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
             <p class="footer-love">Met liefde gemaakt</p>
         </div>
     </footer>
