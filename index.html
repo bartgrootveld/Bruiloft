@@ -3,486 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam & Jurgen - 24 t/m 27 april 2027 | Málaga, Spanje</title>
+    <title>Sam &amp; Jurgen &mdash; 24 t/m 27 april 2027 &middot; Málaga</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">S <span class="nav-amp">&amp;</span> J</a>
-            <button class="nav-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <a href="#hero" class="nav-logo">
+        <span class="nav-monogram">S<span class="nav-monogram-amp">&amp;</span>J</span>
+        <span class="nav-logo-text">Sam <em>&amp;</em> Jurgen</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-menu">
+        <ul class="nav-links">
+            <li><a href="#verhaal">Ons verhaal</a></li>
+            <li><a href="#programma">Programma</a></li>
+            <li><a href="#locatie">Locatie</a></li>
+        </ul>
+        <a href="#rsvp" class="nav-cta">RSVP &rarr;</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<header id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
+
+    <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        Save the date &middot; Málaga, España
+        <span class="hero-eyebrow-line"></span>
+    </div>
+
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="hero-title-row">Sam</span>
+            <span class="hero-title-row hero-title-italic"><span class="hero-amp">&amp;</span>Jurgen</span>
+        </h1>
+
+        <div class="hero-meta">
+            <div class="hero-meta-block">
+                <span class="eyebrow">Datum</span>
+                <span class="hero-meta-value">24 &mdash; 27 april 2027</span>
+            </div>
+            <span class="hero-meta-divider" aria-hidden="true"></span>
+            <div class="hero-meta-block">
+                <span class="eyebrow">Locatie</span>
+                <span class="hero-meta-value">Fuente del Sol, Málaga</span>
+            </div>
+        </div>
+
+        <div class="countdown" aria-label="Aftellen tot 25 april 2027">
+            <div class="countdown-item">
+                <span class="countdown-number" id="cd-days">---</span>
+                <span class="countdown-label">dagen</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="cd-hours">--</span>
+                <span class="countdown-label">uren</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="cd-minutes">--</span>
+                <span class="countdown-label">min</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="cd-seconds">--</span>
+                <span class="countdown-label">sec</span>
+            </div>
+        </div>
+
+        <div class="hero-cta-row">
+            <a href="#rsvp" class="btn btn-primary">Bevestig je komst <span class="arrow">&rarr;</span></a>
+            <a href="#programma" class="btn btn-ghost-light">Bekijk het programma</a>
+        </div>
+    </div>
+
+    <div class="hero-quote">
+        <p class="hero-quote-text">&ldquo;Soms loopt het gewoon zoals het moet lopen. Toen we elkaar opnieuw tegenkwamen klopte het, dat wisten we allebei.&rdquo;</p>
+        <p class="hero-quote-attr">— Sam &amp; Jurgen</p>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+        scroll
+        <span class="hero-scroll-line"></span>
+    </div>
+</header>
+
+<!-- Ons verhaal -->
+<section id="verhaal" class="section section-verhaal">
+    <div class="container">
+        <div class="section-head" data-animate>
+            <div class="section-head-left">
+                <div class="eyebrow eyebrow-line"><span class="eyebrow-rule"></span> Cap. I</div>
+                <h2 class="section-title">Ons<br><em>verhaal</em></h2>
+            </div>
+            <p class="section-lede">
+                Drie kleine hoofdstukken over hoe we hier zijn gekomen — en waarom we het in april 2027 graag samen met jullie willen vieren in Málaga.
+            </p>
+        </div>
+
+        <div class="story-grid">
+            <article class="story-card" data-animate>
+                <span class="story-dot" style="background: var(--pastel-peach)"></span>
+                <div class="story-num">01 &middot; Hoe het begon</div>
+                <h3 class="story-title">Het klopte<br>meteen.</h3>
+                <p class="story-body">Soms loopt het gewoon zoals het moet lopen. Toen we elkaar opnieuw tegenkwamen, klopte het gewoon. Dat wisten we allebei.</p>
+                <svg class="story-arc" viewBox="0 0 320 60" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0 50 Q 160 0 320 50" stroke="var(--accent)" stroke-width="1" fill="none"/>
+                </svg>
+            </article>
+
+            <article class="story-card" data-animate>
+                <span class="story-dot" style="background: var(--pastel-rose)"></span>
+                <div class="story-num">02 &middot; Ons leven samen</div>
+                <h3 class="story-title">Iets om<br>blij van<br>te worden.</h3>
+                <p class="story-body">Samen hebben we iets opgebouwd waar we elke dag blij van worden. Met z'n allen, met alles erop en eraan. Precies zoals het ons gelukkig maakt.</p>
+                <svg class="story-arc" viewBox="0 0 320 60" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0 50 Q 160 0 320 50" stroke="var(--accent)" stroke-width="1" fill="none"/>
+                </svg>
+            </article>
+
+            <article class="story-card" data-animate>
+                <span class="story-dot" style="background: var(--pastel-sage)"></span>
+                <div class="story-num">03 &middot; Het ja-woord</div>
+                <h3 class="story-title">Sí,<br>quiero.</h3>
+                <p class="story-body">Het voelt goed, het klopt en we kijken uit naar alles wat nog komt. Daarom geven wij elkaar graag het ja-woord met jullie in april 2027 in Málaga.</p>
+                <svg class="story-arc" viewBox="0 0 320 60" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0 50 Q 160 0 320 50" stroke="var(--accent)" stroke-width="1" fill="none"/>
+                </svg>
+            </article>
+        </div>
+
+        <div class="signature" data-animate>
+            <div class="signature-script">sí, quiero.</div>
+            <div class="eyebrow">— Sam &amp; Jurgen, primavera 2027</div>
+        </div>
+    </div>
+</section>
+
+<!-- Programma -->
+<section id="programma" class="section section-programma">
+    <div class="programma-blob" aria-hidden="true"></div>
+    <div class="container">
+        <div class="section-head" data-animate>
+            <div class="section-head-left">
+                <div class="eyebrow eyebrow-line"><span class="eyebrow-rule"></span> Cap. II</div>
+                <h2 class="section-title section-title-wide">Vier dagen, één <em>fiesta</em>.</h2>
+            </div>
+            <p class="section-lede">
+                We maken er geen "één dagje bruiloft" van — we gaan er gewoon een paar dagen van genieten. Tik op een dag voor het volledige programma.
+            </p>
+        </div>
+
+        <div class="day-tabs" role="tablist">
+            <button class="day-tab" data-day="0" role="tab" aria-selected="false">
+                <div class="day-tab-row">
+                    <span class="day-tab-weekday">ZAT</span>
+                    <span class="day-tab-dot" style="background: var(--pastel-peach)"></span>
+                </div>
+                <div class="day-tab-date">24 APR</div>
+                <div class="day-tab-name">We trappen af</div>
             </button>
-            <ul class="nav-links">
-                <li><a href="#ons-verhaal">Ons Verhaal</a></li>
-                <li><a href="#details">Details</a></li>
-                <li><a href="#programma">Programma</a></li>
-                <li><a href="#locatie">Locatie</a></li>
-                <li><a href="#rsvp" class="nav-cta">RSVP</a></li>
-            </ul>
+            <button class="day-tab is-active" data-day="1" role="tab" aria-selected="true">
+                <div class="day-tab-row">
+                    <span class="day-tab-weekday">ZON</span>
+                    <span class="day-tab-dot" style="background: var(--pastel-rose)"></span>
+                </div>
+                <div class="day-tab-date">25 APR</div>
+                <div class="day-tab-name">De grote dag</div>
+            </button>
+            <button class="day-tab" data-day="2" role="tab" aria-selected="false">
+                <div class="day-tab-row">
+                    <span class="day-tab-weekday">MAA</span>
+                    <span class="day-tab-dot" style="background: var(--pastel-butter)"></span>
+                </div>
+                <div class="day-tab-date">26 APR</div>
+                <div class="day-tab-name">Bijkomen</div>
+            </button>
+            <button class="day-tab" data-day="3" role="tab" aria-selected="false">
+                <div class="day-tab-row">
+                    <span class="day-tab-weekday">DIN</span>
+                    <span class="day-tab-dot" style="background: var(--pastel-sage)"></span>
+                </div>
+                <div class="day-tab-date">27 APR</div>
+                <div class="day-tab-name">Afsluiten</div>
+            </button>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header id="hero">
-        <div class="hero-bg-pattern"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-ornament-top">
-                <svg width="120" height="30" viewBox="0 0 120 30" fill="none">
-                    <path d="M60 28C60 28 45 15 30 15C15 15 5 22 0 28" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
-                    <path d="M60 28C60 28 75 15 90 15C105 15 115 22 120 28" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
-                    <circle cx="60" cy="28" r="2" fill="currentColor" opacity="0.6"/>
-                </svg>
-            </div>
-            <p class="hero-subtitle">Wij gaan trouwen</p>
-            <h1 class="hero-title">Sam <span class="amp">&amp;</span> Jurgen</h1>
-            <div class="hero-meta">
-                <span class="hero-date">24 t/m 27 april 2027</span>
-                <span class="hero-dot"></span>
-                <span class="hero-location">Málaga, Spanje</span>
-            </div>
-            <div class="countdown" id="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="days">---</span>
-                    <span class="countdown-label">dagen</span>
-                </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="hours">--</span>
-                    <span class="countdown-label">uren</span>
-                </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="minutes">--</span>
-                    <span class="countdown-label">minuten</span>
-                </div>
-                <div class="countdown-sep">:</div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="seconds">--</span>
-                    <span class="countdown-label">seconden</span>
-                </div>
-            </div>
-            <a href="#rsvp" class="hero-cta">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Bevestig hier definitief je aanwezigheid
-            </a>
-            <div class="hero-ornament-bottom">
-                <svg width="200" height="20" viewBox="0 0 200 20" fill="none">
-                    <line x1="0" y1="10" x2="80" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
-                    <circle cx="90" cy="10" r="2" fill="currentColor" opacity="0.5"/>
-                    <circle cx="100" cy="10" r="3" fill="currentColor" opacity="0.6"/>
-                    <circle cx="110" cy="10" r="2" fill="currentColor" opacity="0.5"/>
-                    <line x1="120" y1="10" x2="200" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.4"/>
-                </svg>
-            </div>
-        </div>
-        <div class="hero-scroll-indicator">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-        </div>
-    </header>
+        <div class="day-card" id="day-card" data-animate></div>
+    </div>
+</section>
 
-    <!-- Ons Verhaal -->
-    <section id="ons-verhaal" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Onze reis</span>
-                <h2 class="section-title">Ons Verhaal</h2>
-                <div class="divider">
-                    <span></span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    <span></span>
+<!-- Locatie -->
+<section id="locatie" class="section section-locatie">
+    <div class="container">
+        <div class="locatie-grid">
+            <div class="locatie-info" data-animate>
+                <div class="eyebrow eyebrow-line"><span class="eyebrow-rule"></span> Cap. III</div>
+                <h2 class="section-title section-title-wide">De <em>plek</em>.</h2>
+                <p class="section-lede locatie-lede">
+                    Fuente del Sol — een Andalusisch landgoed even buiten Málaga, met palmen, een zwembad, oude muren en uitzicht over de heuvels van de Costa del Sol.
+                </p>
+
+                <div class="facts-grid">
+                    <div class="fact">
+                        <span class="eyebrow">Stad</span>
+                        <span class="fact-value">Málaga, España</span>
+                    </div>
+                    <div class="fact">
+                        <span class="eyebrow">Vliegveld</span>
+                        <span class="fact-value">AGP &middot; Costa del Sol</span>
+                    </div>
+                    <div class="fact">
+                        <span class="eyebrow">Klimaat</span>
+                        <span class="fact-value">Gem. 22°C &middot; volop zon</span>
+                    </div>
+                    <div class="fact">
+                        <span class="eyebrow">Tip</span>
+                        <span class="fact-value">Maak er een lang weekend van</span>
+                    </div>
+                </div>
+
+                <div class="locatie-actions">
+                    <a class="btn btn-accent btn-sm" href="https://www.google.com/maps/search/Fuente+del+Sol+Antequera+Malaga" target="_blank" rel="noopener">Open in Maps <span class="arrow">↗</span></a>
+                    <a class="btn btn-ghost-dark btn-sm" href="#rsvp">Reisinfo volgt</a>
                 </div>
             </div>
-            <div class="story-grid">
-                <div class="story-card" data-animate>
-                    <div class="story-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    </div>
-                    <h3>Hoe het begon</h3>
-                    <p>Soms loopt het gewoon zoals het moet lopen. Toen we elkaar opnieuw tegenkwamen klopte het gewoon. Dat wisten we allebei!</p>
-                </div>
-                <div class="story-card" data-animate>
-                    <div class="story-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <h3>Ons leven samen</h3>
-                    <p>Samen hebben we iets opgebouwd waar we elke dag blij van worden. Met z&rsquo;n allen, met alles erop en eraan. Precies zoals het ons gelukkig maakt.</p>
-                </div>
-                <div class="story-card" data-animate>
-                    <div class="story-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c6-3 10-9.5 10-14.5C22 4.5 19 2 16 2c-1.74 0-3.41.81-4.5 2.09C10.41 2.81 8.74 2 7 2 4 2 1 4.5 1 7.5 1 12.5 5 19 12 22z"/><path d="M12 12l2-4h4l-3 3 1 4-4-2.5L8 15l1-4-3-3h4z"/></svg>
-                    </div>
-                    <h3>Het ja-woord</h3>
-                    <p>Het voelt goed, het klopt en we kijken uit naar alles wat nog komt. Daarom geven wij elkaar graag het ja-woord met jullie in april 2027 in M&aacute;laga.</p>
+
+            <div class="locatie-map" data-animate>
+                <div class="locatie-map-blob" aria-hidden="true"></div>
+                <figure class="locatie-photo">
+                    <img src="fuente-del-sol-1024x683.jpg" alt="Fuente del Sol — witte Andalusische binnenplaats met bogen en bloemen" loading="lazy">
+                </figure>
+
+                <div class="locatie-marker-card">
+                    <div class="eyebrow">Hier is het feest</div>
+                    <div class="marker-script">Aquí mismo.</div>
+                    <p>Fuente del Sol &middot; Antequera-Málaga</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Details -->
-    <section id="details" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Praktisch</span>
-                <h2 class="section-title">De Details</h2>
-                <div class="divider">
-                    <span></span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
-                    <span></span>
-                </div>
-            </div>
-            <div class="details-grid">
-                <div class="detail-card" data-animate>
-                    <div class="detail-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><rect x="8" y="14" width="3" height="3" rx="0.5"/></svg>
-                    </div>
-                    <h3>Datum</h3>
-                    <p>24 t/m 27 april 2027</p>
-                    <p class="detail-sub">Ja-woord op zondag 25 april</p>
-                </div>
-                <div class="detail-card" data-animate>
-                    <div class="detail-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <h3>Locatie</h3>
-                    <p>Málaga, Spanje</p>
-                    <p class="detail-sub">Exacte locatie volgt</p>
-                </div>
-                <div class="detail-card" data-animate>
-                    <div class="detail-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <h3>Tijdstip</h3>
-                    <p>Ceremonie om 16:30 uur</p>
-                    <p class="detail-sub">Meerdaags programma, zie hieronder</p>
-                </div>
-                <div class="detail-card" data-animate>
-                    <div class="detail-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1.08z"/></svg>
-                    </div>
-                    <h3>Dresscode</h3>
-                    <p>Wisselt per dag</p>
-                    <p class="detail-sub">Van Spanish chique tot pastel en beachwear</p>
-                </div>
-            </div>
+<!-- RSVP -->
+<section id="rsvp" class="section section-rsvp">
+    <div class="rsvp-blob rsvp-blob-1" aria-hidden="true"></div>
+    <div class="rsvp-blob rsvp-blob-2" aria-hidden="true"></div>
+    <div class="container">
+        <div class="rsvp-head" data-animate>
+            <div class="eyebrow eyebrow-center"><span class="eyebrow-rule"></span> Cap. IV &middot; RSVP <span class="eyebrow-rule"></span></div>
+            <h1 class="rsvp-title rsvp-title-wide">Ben je <em>erbij?</em></h1>
+            <p class="rsvp-lede">
+                Een bruiloft in Spanje klinkt als vakantie — en dat is het ook een beetje. Maar dat betekent ook dat we ruim van tevoren moeten weten wie er bij is. Geen halve ja's.
+            </p>
+            <p class="rsvp-deadline">Laat het ons weten vóór <strong>1 februari 2027</strong></p>
         </div>
-    </section>
 
-    <!-- Programma -->
-    <section id="programma" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">De dagen</span>
-                <h2 class="section-title">Het programma</h2>
-                <div class="divider">
-                    <span></span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><circle cx="12" cy="12" r="4"/></svg>
-                    <span></span>
-                </div>
-                <p class="program-intro">We maken er geen &ldquo;&eacute;&eacute;n dagje bruiloft&rdquo; van&hellip; We gaan er gewoon een paar dagen van genieten.</p>
+        <form id="rsvp-form" class="rsvp-card" data-animate novalidate>
+            <div class="rsvp-progress">
+                <span class="eyebrow rsvp-step-label" id="rsvp-step-counter">Stap 1 / 4</span>
+                <div class="rsvp-progress-bar"><div class="rsvp-progress-fill" id="rsvp-progress-fill"></div></div>
+                <span class="eyebrow rsvp-step-label" id="rsvp-step-name">Wie</span>
             </div>
 
-            <div class="program-days">
-                <article class="day-card" data-animate>
-                    <header class="day-card-header">
-                        <span class="day-card-date">24 april 2027</span>
-                        <h3 class="day-card-title">We trappen af</h3>
-                    </header>
-                    <div class="day-card-body">
-                        <p><strong>Vanaf 16:30 uur</strong> begint het feest. We starten meteen goed met een Spaanse avond! Denk: lekker eten, drankjes en veel gezelligheid.</p>
-                        <p class="day-card-note">Alles is geregeld &mdash; jullie hoeven alleen maar te komen en te genieten.</p>
-                    </div>
-                    <footer class="day-card-dresscode">
-                        <span class="dresscode-label">Dresscode</span>
-                        <span class="dresscode-name">Spanish Summer Chique</span>
-                        <span class="dresscode-hint">Hoe feller hoe beter &mdash; rood, blauw, groen&hellip; je snapt &rsquo;m <span aria-hidden="true">&#128521;</span></span>
-                        <div class="dresscode-swatches" aria-hidden="true">
-                            <span class="swatch" style="background:#D7263D" title="Rood"></span>
-                            <span class="swatch" style="background:#1B4F8C" title="Blauw"></span>
-                            <span class="swatch" style="background:#3E8E41" title="Groen"></span>
-                            <span class="swatch" style="background:#F2A104" title="Oker"></span>
+            <!-- Step 0: Wie -->
+            <div class="rsvp-step is-active" data-step="0">
+                <h3 class="rsvp-step-title">Wie zijn jullie?</h3>
+                <p class="rsvp-step-sub">Eerst even kennismaken — dan weten we wie we mogen verwachten.</p>
+                <label class="rsvp-field">
+                    <span class="eyebrow">Jullie namen</span>
+                    <input type="text" name="naam" placeholder="Bijv. Anna &amp; Pieter" autocomplete="name" required>
+                </label>
+                <label class="rsvp-field">
+                    <span class="eyebrow">E-mailadres</span>
+                    <input type="email" name="email" placeholder="je@email.com" autocomplete="email" required>
+                </label>
+            </div>
+
+            <!-- Step 1: Aanwezig -->
+            <div class="rsvp-step" data-step="1">
+                <h3 class="rsvp-step-title">Mogen we op jullie rekenen?</h3>
+                <p class="rsvp-step-sub">Heel het weekend, of komt er iets tussen?</p>
+                <div class="rsvp-choices">
+                    <label class="rsvp-choice">
+                        <input type="radio" name="aanwezig" value="ja" required>
+                        <div class="rsvp-choice-card">
+                            <span class="rsvp-choice-radio"></span>
+                            <span class="rsvp-choice-icon">✓</span>
+                            <span class="rsvp-choice-title">Ja, we komen!</span>
+                            <span class="rsvp-choice-sub">Vlucht boeken, koffer pakken, vamos.</span>
                         </div>
-                    </footer>
-                </article>
-
-                <article class="day-card day-card-highlight" data-animate>
-                    <span class="day-card-badge">De grote dag</span>
-                    <header class="day-card-header">
-                        <span class="day-card-date">25 april 2027</span>
-                        <h3 class="day-card-title">Het ja-woord</h3>
-                    </header>
-                    <div class="day-card-body">
-                        <p>We beginnen relaxed met samen ontbijten en lunchen. Tussendoor is er alle tijd om te chillen bij het zwembad, even bij te komen of je rustig klaar te maken.</p>
-                        <p><strong>Om 16:30 uur</strong> is het zover: dan geven we elkaar het ja-woord. Daarna gaan we samen dineren&hellip; en natuurlijk door met een goed feest.</p>
-                    </div>
-                    <footer class="day-card-dresscode">
-                        <span class="dresscode-label">Dresscode</span>
-                        <span class="dresscode-name">Pastel</span>
-                        <span class="dresscode-hint">Zachte tinten passend bij het Spaanse licht.</span>
-                        <div class="dresscode-swatches" aria-hidden="true">
-                            <span class="swatch" style="background:#F8C8DC" title="Blush"></span>
-                            <span class="swatch" style="background:#C9E4DE" title="Mint"></span>
-                            <span class="swatch" style="background:#FAEAB1" title="Boter"></span>
-                            <span class="swatch" style="background:#D6CDEA" title="Lavendel"></span>
-                            <span class="swatch" style="background:#BEE1F4" title="Lucht"></span>
-                        </div>
-                    </footer>
-                </article>
-
-                <article class="day-card" data-animate>
-                    <header class="day-card-header">
-                        <span class="day-card-date">26 april 2027</span>
-                        <h3 class="day-card-title">Bijkomen (of juist niet)</h3>
-                    </header>
-                    <div class="day-card-body">
-                        <p>Ook deze dag starten we samen met ontbijt en lunch, maar verder staat alles in het teken van ontspannen en genieten bij het zwembad van Fuente del Sol.</p>
-                        <p>We maken er een poolparty van, met een relaxte sfeer en een goede (licht brakke <span aria-hidden="true">&#128521;</span>) BBQ.</p>
-                    </div>
-                    <footer class="day-card-dresscode">
-                        <span class="dresscode-label">Dresscode</span>
-                        <span class="dresscode-name">Comfortable beachwear</span>
-                        <span class="dresscode-hint">Zwemkleding, slippers en zonnebril aan.</span>
-                        <div class="dresscode-swatches" aria-hidden="true">
-                            <span class="swatch" style="background:#F5E6CA" title="Zand"></span>
-                            <span class="swatch" style="background:#7EC4CF" title="Aqua"></span>
-                            <span class="swatch" style="background:#FFFFFF;border:1px solid var(--color-border)" title="Wit"></span>
-                            <span class="swatch" style="background:#E8A87C" title="Coral"></span>
-                        </div>
-                    </footer>
-                </article>
-
-                <article class="day-card" data-animate>
-                    <header class="day-card-header">
-                        <span class="day-card-date">27 april 2027</span>
-                        <h3 class="day-card-title">Afsluiten</h3>
-                    </header>
-                    <div class="day-card-body">
-                        <p>We sluiten samen af met een ontbijt, waarna iedereen weer rustig zijn eigen weg gaat &mdash; hopelijk met een paar mooie herinneringen (en misschien een klein beetje spierpijn van het dansen).</p>
-                    </div>
-                    <footer class="day-card-dresscode day-card-dresscode-empty">
-                        <span class="dresscode-label">Dresscode</span>
-                        <span class="dresscode-name">Comfortabel onderweg</span>
-                    </footer>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Locatie -->
-    <section id="locatie" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Bestemming</span>
-                <h2 class="section-title">Locatie</h2>
-                <div class="divider">
-                    <span></span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="white"/></svg>
-                    <span></span>
-                </div>
-            </div>
-            <div class="location-content" data-animate>
-                <div class="location-info">
-                    <h3>Málaga, Spanje</h3>
-                    <p>De prachtige kuststad aan de Costa del Sol vormt het perfecte decor voor onze grote dag. Met zijn warme klimaat, adembenemende uitzichten en heerlijke Spaanse gastvrijheid wordt het een onvergetelijk feest.</p>
-                    <div class="location-details">
-                        <div class="location-detail">
-                            <div class="location-detail-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-                            </div>
-                            <div>
-                                <strong>Vliegveld</strong>
-                                <span>Málaga-Costa del Sol (AGP)</span>
-                            </div>
-                        </div>
-                        <div class="location-detail">
-                            <div class="location-detail-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
-                            </div>
-                            <div>
-                                <strong>Weer</strong>
-                                <span>Gemiddeld 22°C in april, volop zon</span>
-                            </div>
-                        </div>
-                        <div class="location-detail">
-                            <div class="location-detail-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                            </div>
-                            <div>
-                                <strong>Tips</strong>
-                                <span>Maak er een lang weekend van! Meer info over verblijf volgt.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="location-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102263.83800979498!2d-4.5499847!3d36.7213028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7259c56ec03d49%3A0x93f39e780a405e0!2sM%C3%A1laga%2C%20Spanje!5e0!3m2!1snl!2snl!4v1700000000000!5m2!1snl!2snl"
-                        width="100%"
-                        height="400"
-                        style="border:0; border-radius: 12px;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP -->
-    <section id="rsvp" class="section section-rsvp">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Laat het ons weten</span>
-                <h2 class="section-title">RSVP</h2>
-                <div class="divider">
-                    <span></span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" fill="none" stroke="white" stroke-width="2"/></svg>
-                    <span></span>
-                </div>
-            </div>
-            <p class="rsvp-intro rsvp-intro-lead">Een bruiloft in Spanje klinkt als vakantie&hellip; en dat is het eigenlijk ook een beetje. Wij zorgen dat alles tot in de puntjes geregeld is, zodat jullie alleen maar hoeven te ontspannen en mee te genieten.<br>Maar eerlijk is eerlijk: dat betekent ook dat we ruim van tevoren moeten weten wie er bij is. Dus: ben je erbij? Dan rekenen we op je. Geen halve ja&rsquo;s <span aria-hidden="true">&#128521;</span></p>
-            <p class="rsvp-intro">Laat ons voor <strong>1 februari 2027</strong> weten of jullie erbij kunnen zijn.</p>
-
-            <form id="rsvp-form" class="rsvp-form" data-animate>
-                <div class="form-group">
-                    <label for="naam">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        Jullie namen
                     </label>
-                    <input type="text" id="naam" name="naam" required placeholder="Bijv. Anna & Pieter">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        E-mailadres
-                    </label>
-                    <input type="email" id="email" name="email" required placeholder="je@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-                        Aanwezigheid
-                    </label>
-                    <div class="radio-group">
-                        <label class="radio-label">
-                            <input type="radio" name="aanwezig" value="ja" required>
-                            <span class="radio-custom"></span>
-                            <span class="radio-text">
-                                <strong>Ja, tuurlijk zijn wij erbij!</strong>
-                                <small>We kijken ernaar uit</small>
-                            </span>
-                        </label>
-                        <label class="radio-label">
-                            <input type="radio" name="aanwezig" value="nee">
-                            <span class="radio-custom"></span>
-                            <span class="radio-text">
-                                <strong>Helaas kunnen wij er niet bij zijn</strong>
-                                <small>Jammer, maar bedankt voor het laten weten</small>
-                            </span>
-                        </label>
-                    </div>
-                </div>
-
-                <div id="extra-fields" class="extra-fields hidden">
-                    <div class="form-group">
-                        <label>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-                            Wens om te speechen?
-                        </label>
-                        <div class="radio-group radio-group-inline">
-                            <label class="radio-label">
-                                <input type="radio" name="speech" value="ja">
-                                <span class="radio-custom"></span>
-                                <span class="radio-text"><strong>Ja, graag</strong></span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="speech" value="nee">
-                                <span class="radio-custom"></span>
-                                <span class="radio-text"><strong>Nee, dank je</strong></span>
-                            </label>
+                    <label class="rsvp-choice">
+                        <input type="radio" name="aanwezig" value="nee">
+                        <div class="rsvp-choice-card">
+                            <span class="rsvp-choice-radio"></span>
+                            <span class="rsvp-choice-icon">✗</span>
+                            <span class="rsvp-choice-title">Helaas niet</span>
+                            <span class="rsvp-choice-sub">We zijn er met onze gedachten bij.</span>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="dieet">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                            Dieeëtwensen of allergieën?
-                        </label>
-                        <input type="text" id="dieet" name="dieet" placeholder="Vegetarisch, glutenvrij, noten-allergie, etc.">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bijzonderheden">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                            Verdere zaken waar wij echt rekening mee moeten houden?
-                        </label>
-                        <textarea id="bijzonderheden" name="bijzonderheden" rows="3" placeholder="Denk aan toegankelijkheid, kinderen, reisinformatie&hellip;"></textarea>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="bericht">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                        Bericht voor het bruidspaar
                     </label>
-                    <textarea id="bericht" name="bericht" rows="4" placeholder="Laat een lief berichtje achter..."></textarea>
                 </div>
+            </div>
 
-                <button type="submit" class="btn-submit" id="btn-submit">
-                    <span class="btn-text">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                        Verstuur RSVP
-                    </span>
-                    <span class="btn-loading hidden">
-                        <span class="spinner"></span>
-                        Versturen...
-                    </span>
-                </button>
-            </form>
-
-            <!-- Success Message -->
-            <div id="rsvp-success" class="rsvp-success hidden">
-                <div class="success-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <!-- Step 2: Speech -->
+            <div class="rsvp-step" data-step="2">
+                <h3 class="rsvp-step-title">Wil je iets zeggen?</h3>
+                <p class="rsvp-step-sub">Een speech, een toost, een verhaal — laat het ons weten zodat we ruimte kunnen maken in het programma.</p>
+                <div class="rsvp-choices">
+                    <label class="rsvp-choice">
+                        <input type="radio" name="speech" value="ja">
+                        <div class="rsvp-choice-card">
+                            <span class="rsvp-choice-radio"></span>
+                            <span class="rsvp-choice-icon">🎤</span>
+                            <span class="rsvp-choice-title">Ja, graag</span>
+                            <span class="rsvp-choice-sub">Reken op een paar minuten van het podium.</span>
+                        </div>
+                    </label>
+                    <label class="rsvp-choice">
+                        <input type="radio" name="speech" value="nee">
+                        <div class="rsvp-choice-card">
+                            <span class="rsvp-choice-radio"></span>
+                            <span class="rsvp-choice-icon">🥂</span>
+                            <span class="rsvp-choice-title">Nee, ik luister</span>
+                            <span class="rsvp-choice-sub">Glas in de hand is genoeg.</span>
+                        </div>
+                    </label>
                 </div>
-                <h3>Bedankt!</h3>
-                <p id="success-message">Je RSVP is ontvangen. We kijken ernaar uit!</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-ornament">
-                <svg width="140" height="20" viewBox="0 0 140 20" fill="none">
-                    <line x1="0" y1="10" x2="55" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
-                    <circle cx="62" cy="10" r="2" fill="currentColor" opacity="0.4"/>
-                    <circle cx="70" cy="10" r="3" fill="currentColor" opacity="0.5"/>
-                    <circle cx="78" cy="10" r="2" fill="currentColor" opacity="0.4"/>
-                    <line x1="85" y1="10" x2="140" y2="10" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
-                </svg>
+            <!-- Step 3: Details -->
+            <div class="rsvp-step" data-step="3">
+                <h3 class="rsvp-step-title">Nog iets dat we moeten weten?</h3>
+                <p class="rsvp-step-sub">Dieet, allergieën, bijzonderheden of een lief bericht — alles is welkom.</p>
+                <label class="rsvp-field">
+                    <span class="eyebrow">Dieetwensen</span>
+                    <input type="text" name="dieet" placeholder="Vegetarisch, glutenvrij, geen noten…">
+                </label>
+                <label class="rsvp-field">
+                    <span class="eyebrow">Bijzonderheden</span>
+                    <input type="text" name="bijzonderheden" placeholder="Bijv. minder mobiel, kind mee…">
+                </label>
+                <label class="rsvp-field">
+                    <span class="eyebrow">Bericht voor ons</span>
+                    <textarea name="bericht" rows="3" placeholder="Schrijf ons iets liefs ✿"></textarea>
+                </label>
             </div>
-            <p class="footer-names">Sam &amp; Jurgen</p>
-            <p class="footer-date">24 t/m 27 april 2027 &middot; Málaga, Spanje</p>
-            <div class="footer-hearts">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none" opacity="0.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <p class="footer-love">Met liefde gemaakt</p>
-        </div>
-    </footer>
 
-    <script src="script.js"></script>
+            <div class="rsvp-nav">
+                <button type="button" class="btn btn-ghost-dark btn-sm" id="rsvp-prev">&larr; Terug</button>
+                <button type="button" class="btn btn-primary btn-sm" id="rsvp-next">Volgende <span class="arrow">&rarr;</span></button>
+                <button type="submit" class="btn btn-accent btn-sm" id="rsvp-submit" hidden>Versturen <span class="arrow">&rarr;</span></button>
+            </div>
+        </form>
+
+        <div id="rsvp-success" class="rsvp-success" hidden>
+            <div class="rsvp-success-script">¡Gracias!</div>
+            <p id="rsvp-success-message">We hebben jullie antwoord ontvangen. Hasta pronto — in Málaga.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div>
+            <div class="eyebrow">Sam &amp; Jurgen</div>
+            <div class="footer-script">Hasta<br>luego.</div>
+        </div>
+        <div>
+            <div class="eyebrow">Wanneer</div>
+            <div class="footer-line">24 &mdash; 27 april<br>2027</div>
+        </div>
+        <div>
+            <div class="eyebrow">Waar</div>
+            <div class="footer-line">Fuente del Sol<br>Málaga, España</div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>Made with cariño</span>
+        <span>S × J &middot; MMXXVII</span>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
