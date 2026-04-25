@@ -2,7 +2,7 @@
 // Countdown Timer
 // ============================================
 function updateCountdown() {
-    const weddingDate = new Date('2027-04-25T15:00:00+02:00');
+    const weddingDate = new Date('2027-04-24T16:30:00+02:00');
     const now = new Date();
     const diff = weddingDate - now;
 
@@ -165,9 +165,9 @@ form.addEventListener('submit', (e) => {
         naam: formData.get('naam'),
         email: formData.get('email'),
         aanwezig: formData.get('aanwezig'),
-        aantal: formData.get('aanwezig') === 'ja' ? formData.get('aantal') : null,
+        speech: formData.get('aanwezig') === 'ja' ? formData.get('speech') : null,
         dieet: formData.get('aanwezig') === 'ja' ? formData.get('dieet') : null,
-        muziek: formData.get('aanwezig') === 'ja' ? formData.get('muziek') : null,
+        bijzonderheden: formData.get('aanwezig') === 'ja' ? formData.get('bijzonderheden') : null,
         bericht: formData.get('bericht'),
         timestamp: new Date().toISOString()
     };

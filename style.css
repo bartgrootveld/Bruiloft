@@ -7,7 +7,7 @@
     --color-primary-dark: #5C4A3A;
     --color-accent: #C4A882;
     --color-bg: #FDFAF7;
-    --color-bg-alt: #F6F0EA;
+    --color-bg-alt: #F4EFEC;
     --color-text: #3A3228;
     --color-text-light: #8A7E73;
     --color-text-muted: #B5ACA3;
@@ -16,6 +16,13 @@
     --color-gold-light: #E8D5B0;
     --color-success: #5E8B6A;
     --color-border: #E8DFD5;
+    /* Pastel accents (chique maar vrolijk) */
+    --pastel-blush: #F8C8DC;
+    --pastel-mint: #C9E4DE;
+    --pastel-butter: #FAEAB1;
+    --pastel-lavender: #D6CDEA;
+    --pastel-sky: #BEE1F4;
+    --pastel-coral: #F7C8B5;
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     --font-body: 'Lato', 'Helvetica Neue', sans-serif;
@@ -1377,4 +1384,231 @@ body {
     .footer-names {
         font-size: 1.5rem;
     }
+}
+
+/* ============================================
+   Programma - Day Cards (multi-day)
+   ============================================ */
+.program-intro {
+    max-width: 560px;
+    margin: 1.4rem auto 0;
+    color: var(--color-text-light);
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.program-days {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.day-card {
+    position: relative;
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 2rem 1.8rem 1.6rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(232, 223, 213, 0.6);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition);
+    overflow: hidden;
+}
+
+.day-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--pastel-blush), var(--pastel-butter), var(--pastel-mint), var(--pastel-sky), var(--pastel-lavender));
+    opacity: 0.85;
+}
+
+.day-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-medium);
+}
+
+.day-card-highlight {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FCF6F5 100%);
+    border-color: var(--pastel-blush);
+}
+
+.day-card-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--pastel-blush);
+    color: var(--color-primary-dark);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.day-card-header {
+    margin-bottom: 1rem;
+}
+
+.day-card-date {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 0.4rem;
+}
+
+.day-card-title {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--color-primary-dark);
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+.day-card-body {
+    flex: 1;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 1.4rem;
+}
+
+.day-card-body p + p {
+    margin-top: 0.7rem;
+}
+
+.day-card-body strong {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.day-card-note {
+    font-size: 0.85rem !important;
+    color: var(--color-text-muted) !important;
+    font-style: italic;
+}
+
+.day-card-dresscode {
+    border-top: 1px dashed var(--color-border);
+    padding-top: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.dresscode-label {
+    font-family: var(--font-body);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.dresscode-name {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: var(--color-primary-dark);
+    font-weight: 600;
+}
+
+.dresscode-hint {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.dresscode-swatches {
+    display: flex;
+    gap: 8px;
+    margin-top: 0.5rem;
+}
+
+.swatch {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+    transition: transform var(--transition);
+}
+
+.swatch:hover {
+    transform: scale(1.18);
+}
+
+.day-card-dresscode-empty .dresscode-name {
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .program-days {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .day-card {
+        padding: 1.6rem 1.4rem 1.4rem;
+    }
+    .day-card-title {
+        font-size: 1.45rem;
+    }
+}
+
+/* ============================================
+   RSVP - intro lead + inline radio
+   ============================================ */
+.rsvp-intro-lead {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.radio-group-inline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.radio-group-inline .radio-label {
+    flex: 1;
+    min-width: 160px;
+}
+
+/* ============================================
+   Subtle pastel touches on section accents
+   ============================================ */
+.section-tag {
+    position: relative;
+    padding-left: 18px;
+}
+
+.section-tag::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pastel-blush), var(--pastel-lavender));
+    box-shadow: 0 0 0 3px rgba(248, 200, 220, 0.18);
 }
