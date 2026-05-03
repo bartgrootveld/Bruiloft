@@ -323,8 +323,20 @@
         setStep(current + 1);
     });
 
+    function showError(message) {
+        var existing = document.getElementById('rsvp-error');
+        if (existing) existing.remove();
+        var box = document.createElement('div');
+        box.id = 'rsvp-error';
+        box.setAttribute('role', 'alert');
+        box.style.cssText = 'margin-top:18px;padding:14px 16px;border-radius:10px;background:#fbe9e1;color:#7a2c14;font-size:14px;line-height:1.5;';
+        box.textContent = message;
+        form.querySelector('.rsvp-nav').insertAdjacentElement('beforebegin', box);
+    }
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
+
         var data = {
             naam: form.naam.value.trim(),
             email: form.email.value.trim(),
@@ -333,9 +345,11 @@
             dieet: form.dieet.value.trim(),
             bijzonderheden: form.bijzonderheden.value.trim(),
             bericht: form.bericht.value.trim(),
+            website: (form.website && form.website.value) || '', // honeypot
             timestamp: new Date().toISOString(),
         };
 
+        // Lokale backup (blijft staan als netwerk faalt).
         try {
             var stored = JSON.parse(localStorage.getItem('bruiloft_rsvps') || '[]');
             var idx = stored.findIndex(function (r) { return r.email === data.email; });
@@ -343,21 +357,51 @@
             localStorage.setItem('bruiloft_rsvps', JSON.stringify(stored));
         } catch (err) { /* ignore */ }
 
-        var msg = document.getElementById('rsvp-success-message');
-        if (data.aanwezig === 'nee') {
-            msg.textContent = 'Jammer dat jullie er niet bij kunnen zijn — bedankt voor het laten weten. We zullen jullie missen!';
-        } else {
-            msg.textContent = 'Geweldig ' + (data.naam || '') + '! We hebben jullie antwoord ontvangen. Je krijgt zo een bevestiging per mail — en daarna gaan we aftellen tot Málaga.';
-        }
+        var existingError = document.getElementById('rsvp-error');
+        if (existingError) existingError.remove();
 
-        form.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        form.style.opacity = '0';
-        form.style.transform = 'translateY(-10px)';
-        setTimeout(function () {
-            form.hidden = true;
-            success.hidden = false;
-            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 420);
+        var originalLabel = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Versturen…';
+
+        fetch('/api/rsvp', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        })
+            .then(function (resp) {
+                return resp.json().then(function (json) {
+                    return { ok: resp.ok, status: resp.status, json: json };
+                }).catch(function () {
+                    return { ok: resp.ok, status: resp.status, json: {} };
+                });
+            })
+            .then(function (result) {
+                if (!result.ok) {
+                    throw new Error(result.json.error || 'Er ging iets mis (' + result.status + ').');
+                }
+
+                var msg = document.getElementById('rsvp-success-message');
+                if (data.aanwezig === 'nee') {
+                    msg.textContent = 'Jammer dat jullie er niet bij kunnen zijn — bedankt voor het laten weten. We zullen jullie missen!';
+                } else {
+                    msg.textContent = 'Geweldig ' + (data.naam || '') + '! We hebben jullie antwoord ontvangen. Je krijgt zo een bevestiging per mail — en daarna gaan we aftellen tot Málaga.';
+                }
+
+                form.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                form.style.opacity = '0';
+                form.style.transform = 'translateY(-10px)';
+                setTimeout(function () {
+                    form.hidden = true;
+                    success.hidden = false;
+                    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 420);
+            })
+            .catch(function (err) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalLabel;
+                showError((err && err.message) || 'Er ging iets mis. Probeer het opnieuw of mail ons direct.');
+            });
     });
 
     setStep(0);

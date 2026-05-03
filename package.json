@@ -1,0 +1,14 @@
+{
+  "name": "bruiloft-sam-jurgen",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Save the date website Sam & Jurgen — Málaga 2027",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}

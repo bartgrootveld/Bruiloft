@@ -269,6 +269,8 @@
         </div>
 
         <form id="rsvp-form" class="rsvp-card" data-animate novalidate>
+            <!-- Honeypot: bots vullen dit, mensen niet. Niet verwijderen. -->
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
             <div class="rsvp-progress">
                 <span class="eyebrow rsvp-step-label" id="rsvp-step-counter">Stap 1 / 4</span>
                 <div class="rsvp-progress-bar"><div class="rsvp-progress-fill" id="rsvp-progress-fill"></div></div>
