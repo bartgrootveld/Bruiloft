@@ -5,7 +5,7 @@
 
 import { Resend } from 'resend';
 
-const TO_HOSTS = 'bartgrootveld@gmail.com';
+const TO_HOSTS = 'sam@nicedoingbusiness.nl';
 const FROM = 'Sam & Jurgen <rsvp@jurgenensam.nl>';
 
 // Best-effort in-memory rate limit (per warm instance).
