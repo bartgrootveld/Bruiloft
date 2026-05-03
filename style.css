@@ -169,6 +169,7 @@ input, textarea, select { font-family: inherit; color: inherit; }
     white-space: nowrap;
 }
 .btn:hover { transform: translateY(-2px); }
+.btn[hidden] { display: none; }
 .btn .arrow { font-family: serif; font-size: 14px; transform: translateY(-1px); }
 .btn-sm { padding: 13px 22px; font-size: 11px; }
 .btn-primary {
