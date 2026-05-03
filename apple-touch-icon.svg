@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+    <rect width="180" height="180" rx="40" fill="#f6efe6"/>
+    <text x="50%" y="50%"
+          text-anchor="middle"
+          dominant-baseline="central"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-style="italic"
+          font-weight="400"
+          font-size="108"
+          fill="#b56b4a"
+          letter-spacing="-3">
+        S<tspan fill="#2b2722">&amp;</tspan>J
+    </text>
+</svg>
