@@ -40,9 +40,13 @@ function rowsHtml(rows) {
     return rows
         .filter(([, v]) => v)
         .map(
-            ([k, v]) =>
-                `<tr><td style="padding:6px 14px 6px 0;color:#7a7367;font-size:12px;text-transform:uppercase;letter-spacing:0.08em;vertical-align:top;">${escapeHtml(k)}</td>` +
-                `<td style="padding:6px 0;color:#1f1c18;font-size:15px;">${escapeHtml(v).replace(/\n/g, '<br>')}</td></tr>`
+            ([k, v]) => `
+            <tr>
+                <td style="padding:14px 0 6px;color:#8a8076;font-family:'Courier New',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;border-bottom:1px solid #efe7d8;">${escapeHtml(k)}</td>
+            </tr>
+            <tr>
+                <td style="padding:8px 0 18px;color:#2b2722;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.5;">${escapeHtml(v).replace(/\n/g, '<br>')}</td>
+            </tr>`
         )
         .join('');
 }
@@ -50,8 +54,56 @@ function rowsHtml(rows) {
 function rowsText(rows) {
     return rows
         .filter(([, v]) => v)
-        .map(([k, v]) => `${k}: ${v}`)
-        .join('\n');
+        .map(([k, v]) => `${k.toUpperCase()}\n${v}`)
+        .join('\n\n');
+}
+
+// Gedeelde shell voor beide mails. Gmail/Outlook-veilige nested tables.
+function emailShell({ preheader, eyebrow, title, accent, body }) {
+    return `<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${escapeHtml(title)}</title>
+</head>
+<body style="margin:0;padding:0;background:#f6efe6;-webkit-font-smoothing:antialiased;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">${escapeHtml(preheader)}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f6efe6;">
+    <tr>
+        <td align="center" style="padding:48px 16px;">
+            <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#fbf6ef;border:1px solid #ece2d0;border-radius:20px;">
+                <tr>
+                    <td style="padding:8px 8px 0;">
+                        <div style="height:6px;background:${accent};border-radius:14px 14px 0 0;"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:36px 48px 8px;">
+                        <div style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#8a8076;">${escapeHtml(eyebrow)}</div>
+                    </td>
+                </tr>
+                ${body}
+                <tr>
+                    <td style="padding:28px 48px 36px;border-top:1px solid #efe7d8;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#a4977f;">Sam &amp; Jurgen</td>
+                                <td align="right" style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#a4977f;">24&nbsp;—&nbsp;27 abril 2027</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding-top:6px;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#a4977f;">Fuente del Sol &middot; Málaga</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <div style="padding:18px 0 0;font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#a4977f;">sí, quiero.</div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>`;
 }
 
 export default async function handler(req, res) {
@@ -104,11 +156,16 @@ export default async function handler(req, res) {
 
     const resend = new Resend(apiKey);
 
-    const aanwezigLabel = aanwezig === 'ja' ? '✓ Komt' : '✗ Komt niet';
-    const speechLabel = speech === 'ja' ? '🎤 Wil iets zeggen' : speech === 'nee' ? '🥂 Luistert mee' : '';
+    const aanwezigJa = aanwezig === 'ja';
+    const aanwezigLabel = aanwezigJa ? 'Komt' : 'Komt niet';
+    const speechLabel = speech === 'ja' ? 'Wil iets zeggen' : speech === 'nee' ? 'Luistert mee' : '';
+    const accentColor = aanwezigJa ? '#b56b4a' : '#c8d3b7';
+    const firstName = naam.split(/[\s&]/)[0] || naam;
 
+    // ============================================
+    // Mail aan host (Sam)
+    // ============================================
     const hostRows = [
-        ['Naam', naam],
         ['E-mail', email],
         ['Aanwezig', aanwezigLabel],
         ['Speech', speechLabel],
@@ -117,29 +174,52 @@ export default async function handler(req, res) {
         ['Bericht', bericht],
     ];
 
-    const hostSubject = `RSVP — ${naam} — ${aanwezig === 'ja' ? 'JA' : 'NEE'}`;
-    const hostHtml = `
-<!doctype html>
-<html><body style="margin:0;padding:0;background:#f6f1ea;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-  <div style="max-width:560px;margin:30px auto;background:#fffdf9;border:1px solid #e8e0d3;border-radius:18px;overflow:hidden;">
-    <div style="padding:28px 32px 8px;">
-      <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#a4977f;">Nieuwe RSVP · Sam &amp; Jurgen</div>
-      <h1 style="font-family:Georgia,serif;font-weight:400;font-size:30px;margin:8px 0 4px;color:#1f1c18;">${escapeHtml(naam)}</h1>
-      <div style="font-size:18px;color:#1f1c18;">${aanwezigLabel}</div>
-    </div>
-    <table style="width:100%;border-collapse:collapse;padding:20px 32px;margin:0 0 12px;">
-      <tbody style="display:table-row-group;">${rowsHtml(hostRows)}</tbody>
-    </table>
-    <div style="padding:14px 32px 24px;border-top:1px solid #efe7d8;font-size:12px;color:#a4977f;">
-      Reply op deze mail om direct ${escapeHtml(naam)} te antwoorden.
-    </div>
-  </div>
-</body></html>`;
+    const hostBody = `
+                <tr>
+                    <td style="padding:6px 48px 8px;">
+                        <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:42px;line-height:1.1;color:#2b2722;letter-spacing:-0.01em;">${escapeHtml(naam)}</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:14px 48px 0;">
+                        <span style="display:inline-block;padding:8px 16px;border-radius:999px;background:${accentColor};color:#fbf6ef;font-family:'Courier New',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;">${escapeHtml(aanwezigLabel)}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:32px 48px 8px;">
+                        <div style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#a4977f;">Antwoord</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 48px 8px;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rowsHtml(hostRows)}</table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:24px 48px 8px;">
+                        <div style="padding:16px 20px;background:#f6efe6;border-radius:12px;font-family:Georgia,'Times New Roman',serif;font-size:14px;line-height:1.6;color:#5b5249;font-style:italic;">
+                            Reply op deze mail om direct ${escapeHtml(firstName)} te antwoorden.
+                        </div>
+                    </td>
+                </tr>`;
+
+    const hostHtml = emailShell({
+        preheader: `${naam} — ${aanwezigLabel.toLowerCase()}`,
+        eyebrow: 'Nieuwe RSVP',
+        title: `RSVP — ${naam}`,
+        accent: accentColor,
+        body: hostBody,
+    });
+
     const hostText =
-        `Nieuwe RSVP — Sam & Jurgen\n` +
-        `============================\n\n` +
+        `NIEUWE RSVP — Sam & Jurgen\n` +
+        `==========================\n\n` +
+        `${naam}\n${aanwezigLabel}\n\n` +
+        `ANTWOORD\n--------\n\n` +
         rowsText(hostRows) +
-        `\n\n(Reply op deze mail om direct ${naam} te antwoorden.)\n`;
+        `\n\n— Reply op deze mail om direct ${firstName} te antwoorden.\n`;
+
+    const hostSubject = `RSVP — ${naam} — ${aanwezigJa ? 'JA' : 'NEE'}`;
 
     try {
         const { error } = await resend.emails.send({
@@ -159,10 +239,12 @@ export default async function handler(req, res) {
         return res.status(502).json({ error: 'Kon de mail niet versturen. Probeer het later opnieuw.' });
     }
 
-    // Bevestigingsmail aan gast — best-effort, faalt deze dan nog steeds 200.
-    const guestSubject = aanwezig === 'ja'
-        ? '¡Gracias! We hebben jullie RSVP ontvangen 🌞'
-        : 'Bedankt voor het laten weten 💛';
+    // ============================================
+    // Bevestigingsmail aan gast — best-effort
+    // ============================================
+    const guestSubject = aanwezigJa
+        ? '¡Gracias! We hebben jullie RSVP ontvangen'
+        : 'Bedankt voor het laten weten';
 
     const guestRows = [
         ['Aanwezig', aanwezigLabel],
@@ -172,40 +254,76 @@ export default async function handler(req, res) {
         ['Jullie bericht', bericht],
     ];
 
-    const guestIntro = aanwezig === 'ja'
-        ? `Wat leuk dat jullie erbij zijn! We hebben jullie aanmelding goed ontvangen. Dichter bij de datum sturen we meer praktische info — vluchten, hotels, het programma. Tot in Málaga!`
-        : `Jammer dat jullie er niet bij kunnen zijn — bedankt dat jullie het laten weten. We zullen jullie missen. Een dikke knuffel uit de toekomst, vanuit de zon.`;
+    const guestIntro = aanwezigJa
+        ? `Wat leuk dat jullie erbij zijn! We hebben jullie aanmelding goed ontvangen. Dichter bij de datum sturen we meer praktische info — vluchten, hotels, het programma. Tot in Málaga.`
+        : `Jammer dat jullie er niet bij kunnen zijn — bedankt dat jullie het laten weten. We zullen jullie missen, maar zijn blij dat we het weten.`;
 
-    const guestHtml = `
-<!doctype html>
-<html><body style="margin:0;padding:0;background:#f6f1ea;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-  <div style="max-width:560px;margin:30px auto;background:#fffdf9;border:1px solid #e8e0d3;border-radius:18px;overflow:hidden;">
-    <div style="padding:32px 32px 8px;text-align:center;">
-      <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#a4977f;">Sam &amp; Jurgen · 24 — 27 april 2027</div>
-      <div style="font-family:Georgia,serif;font-style:italic;font-size:42px;color:#c97a5a;margin:14px 0 6px;">¡Gracias!</div>
-    </div>
-    <div style="padding:8px 32px 4px;color:#1f1c18;font-size:16px;line-height:1.6;">
-      <p style="margin:0 0 14px;">Hoi ${escapeHtml(naam.split(/[\s&]/)[0])},</p>
-      <p style="margin:0 0 18px;">${escapeHtml(guestIntro)}</p>
-    </div>
-    <div style="padding:6px 32px 12px;">
-      <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#a4977f;margin:14px 0 8px;">Jullie antwoord</div>
-      <table style="width:100%;border-collapse:collapse;">
-        <tbody style="display:table-row-group;">${rowsHtml(guestRows)}</tbody>
-      </table>
-    </div>
-    <div style="padding:18px 32px 28px;border-top:1px solid #efe7d8;color:#7a7367;font-size:13px;line-height:1.6;">
-      Klopt er iets niet? Reply gewoon op deze mail, dan passen we het aan.<br><br>
-      Un abrazo,<br>
-      <span style="font-family:Georgia,serif;font-style:italic;color:#1f1c18;">Sam &amp; Jurgen</span>
-    </div>
-  </div>
-</body></html>`;
+    const guestHeading = aanwezigJa ? '¡Gracias!' : 'Gracias.';
+
+    const guestBody = `
+                <tr>
+                    <td align="center" style="padding:8px 48px 0;">
+                        <div style="font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;font-size:64px;line-height:1;color:${accentColor};letter-spacing:-0.02em;">${escapeHtml(guestHeading)}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding:18px 48px 0;">
+                        <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.6;color:#5b5249;letter-spacing:0.02em;">
+                            Sam <em>&amp;</em> Jurgen &middot; 24 — 27 april 2027
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:36px 48px 0;">
+                        <div style="height:1px;background:#efe7d8;"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:32px 48px 0;">
+                        <p style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:1.6;color:#2b2722;">Hoi ${escapeHtml(firstName)},</p>
+                        <p style="margin:0;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:#2b2722;">${escapeHtml(guestIntro)}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:36px 48px 8px;">
+                        <div style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#a4977f;">Jullie antwoord</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0 48px 8px;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rowsHtml(guestRows)}</table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:24px 48px 8px;">
+                        <div style="padding:18px 22px;background:#f6efe6;border-radius:12px;font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.6;color:#5b5249;">
+                            Klopt er iets niet? Reply op deze mail, dan passen we het aan.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:32px 48px 8px;">
+                        <div style="font-family:Georgia,'Times New Roman',serif;font-size:15px;line-height:1.6;color:#5b5249;">Un abrazo,</div>
+                        <div style="margin-top:6px;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:22px;line-height:1.3;color:#2b2722;">Sam &amp; Jurgen</div>
+                    </td>
+                </tr>`;
+
+    const guestHtml = emailShell({
+        preheader: aanwezigJa
+            ? 'We hebben jullie RSVP goed ontvangen — tot in Málaga.'
+            : 'Bedankt voor het laten weten.',
+        eyebrow: 'RSVP bevestiging',
+        title: guestSubject,
+        accent: accentColor,
+        body: guestBody,
+    });
+
     const guestText =
-        `¡Gracias!\n\n` +
-        `Hoi ${naam.split(/[\s&]/)[0]},\n\n` +
+        `${guestHeading}\n\n` +
+        `Sam & Jurgen — 24 t/m 27 april 2027 — Fuente del Sol, Málaga\n\n` +
+        `Hoi ${firstName},\n\n` +
         guestIntro + `\n\n` +
-        `Jullie antwoord\n---------------\n` +
+        `JULLIE ANTWOORD\n---------------\n\n` +
         rowsText(guestRows) + `\n\n` +
         `Klopt er iets niet? Reply op deze mail.\n\n` +
         `Un abrazo,\nSam & Jurgen\n`;
