@@ -110,7 +110,7 @@
             dressNote: 'Hoe feller, hoe beter. Rood, blauw, groen — je snapt \u2019m \uD83D\uDE09',
             palette: ['#d94b3a', '#2e7bbd', '#3aa86e', '#e8a93b'],
             body: 'Vanaf 16:30 begint het feest. We starten meteen goed met een Spaanse avond \u2014 denk: lekker eten, drankjes en veel gezelligheid. Alles is geregeld, jullie hoeven alleen maar te komen en te genieten.',
-            moments: ['16:30 \u00b7 Welkom met cava', '18:00 \u00b7 Tapas-tafel', '21:00 \u00b7 Spaanse avond'],
+            moments: ['16:30 \u00b7 Welkom met cava', '18:00 \u00b7 Cena Espa\u00f1ola', '21:00 \u00b7 Spaanse avond'],
             accent: 'var(--pastel-peach)', icon: 'sun',
             tag: 'lekker beginnen',
         },
@@ -120,17 +120,17 @@
             dresscode: 'Pastel',
             dressNote: 'Zachte tinten \u2014 perzik, salie, poederroze, lila, lichtblauw, boterzacht geel.',
             palette: ['var(--pastel-peach)', 'var(--pastel-sage)', 'var(--pastel-rose)', 'var(--pastel-sky)', 'var(--pastel-butter)'],
-            body: 'We beginnen relaxed met samen ontbijten en lunchen. Tussendoor is er alle tijd om te chillen bij het zwembad of je rustig klaar te maken. Om 16:30 is het zover: dan geven we elkaar het ja-woord. Daarna dineren we samen \u2014 en natuurlijk door met een goed feest.',
-            moments: ['10:00 \u00b7 Ontbijt & lunch', '15:00 \u00b7 Pool & klaarmaken', '16:30 \u00b7 Het ja-woord', '19:30 \u00b7 Diner', '22:00 \u00b7 Feest'],
+            body: 'Ontbijten en lunchen doen we samen. Tussendoor is er alle tijd om te chillen bij het zwembad of je rustig klaar te maken. Om 16:00 word je weer verwacht. Om 16:30 is het zover: dan geven we elkaar het ja-woord. Daarna dineren we samen \u2014 en natuurlijk door met een goed feest.',
+            moments: ['10:00 \u00b7 Ontbijt', '11:00\u201315:30 \u00b7 Pool & klaarmaken', '13:00 \u00b7 Lunch', '16:30 \u00b7 Het ja-woord', '18:00 \u00b7 Diner', '19:30 \u00b7 Feest!'],
             accent: 'var(--pastel-rose)', icon: 'rings',
             tag: 'het hoogtepunt',
         },
         {
             weekday: 'Maandag', date: '26 APR', label: '2027',
-            name: 'Bijkomen (of juist niet)', spanish: 'La resaca', time: 'all day',
+            name: 'Bijkomen\n(of juist niet)', spanish: 'La resaca', time: 'all day',
             dresscode: 'Comfortable beachwear',
-            dressNote: 'Slippers welkom. Zonnebril verplicht.',
-            palette: ['#f0dfa8', '#c2cfd6', '#f4cdb8'],
+            dressNote: 'Slippers welkom. Zonnebril verplicht. Draag wat je wilt — het gaat om genieten.',
+            palette: ['#f0dfa8', '#c2cfd6', '#f4cdb8', '#d4a5c9', '#a8c9b5', '#f4a5a5', '#a5c4f4'],
             body: 'Samen ontbijten en lunchen, daarna alles in het teken van ontspannen bij het zwembad van Fuente del Sol. We maken er een poolparty van, met een relaxte sfeer en een goede (licht brakke \uD83D\uDE09) BBQ.',
             moments: ['10:00 \u00b7 Slow ontbijt', '13:00 \u00b7 Poolparty', '17:00 \u00b7 BBQ'],
             accent: 'var(--pastel-butter)', icon: 'pool',
@@ -141,7 +141,7 @@
             name: 'Afsluiten', spanish: 'Hasta luego', time: '09:00',
             dresscode: 'Wat je aanhebt',
             dressNote: 'Een glimlach is voldoende.',
-            palette: ['var(--pastel-sage)', 'var(--pastel-peach)'],
+            palette: [],
             body: 'We sluiten samen af met een ontbijt, waarna iedereen weer rustig zijn eigen weg gaat \u2014 hopelijk met een paar mooie herinneringen (en misschien een klein beetje spierpijn van het dansen).',
             moments: ['09:00 \u00b7 Ontbijt', '11:00 \u00b7 Vaarwel'],
             accent: 'var(--pastel-sage)', icon: 'wave',
@@ -221,7 +221,7 @@
                             '<div class="day-card-spanish">' + escapeHtml(d.spanish) + '</div>' +
                         '</div>' +
                     '</div>' +
-                    '<h3 class="day-card-title">' + escapeHtml(d.name) + '</h3>' +
+                    '<h3 class="day-card-title">' + escapeHtml(d.name).replace(/\n/g, '<br>') + '</h3>' +
                     '<p class="day-card-body">' + escapeHtml(d.body) + '</p>' +
                     '<div class="day-card-moments">' + moments + '</div>' +
                 '</div>' +
@@ -229,8 +229,7 @@
                     '<div class="eyebrow">Dresscode</div>' +
                     '<div class="day-card-dresscode">' + escapeHtml(d.dresscode) + '</div>' +
                     '<div class="day-card-dressnote">' + escapeHtml(d.dressNote) + '</div>' +
-                    '<div style="margin-top:30px"><div class="eyebrow">Palette</div>' +
-                    '<div class="day-card-palette">' + chips + '</div></div>' +
+                    (chips ? '<div style="margin-top:30px"><div class="eyebrow">Palette</div><div class="day-card-palette">' + chips + '</div></div>' : '') +
                     '<div class="day-card-time">' +
                         '<span class="eyebrow">Start</span>' +
                         '<span class="day-card-time-value">' + escapeHtml(d.time) + '</span>' +
